@@ -61,6 +61,7 @@ def main():
         raise RuntimeError("No examples matched embeddings; check filenames.")
 
     tokenizer, model = build_tokenizer_and_model(config.MODEL_ID, config)
+    print("MODEL:", config.MODEL_ID)
     print("Applying PEFT LoRA...")
     model = apply_peft(model, config)
     model.print_trainable_parameters()
